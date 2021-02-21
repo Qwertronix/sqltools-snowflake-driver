@@ -17,13 +17,15 @@
       "type": "string",
       "minLength": 1
     },
+    "authenticator": {
+      "type": "string",
+      "title": "Authenticator",
+      "enum": ["SNOWFLAKE", "EXTERNALBROWSER"],
+      "enumNames": ["User and Password", "Browser-based SSO"],
+      "default": "SNOWFLAKE"
+    },
     "username": {
       "title": "User",
-      "type": "string",
-      "minLength": 1
-    },
-    "password": {
-      "title": "Password",
       "type": "string",
       "minLength": 1
     },
@@ -54,6 +56,31 @@
           "default": 3600
         }
       }
+    }
+  },
+  "dependencies": {
+    "authenticator": {
+      "oneOf": [
+        {
+          "properties": {
+            "authenticator": {
+              "enum": ["SNOWFLAKE"]
+            },
+            "password": {
+              "title": "Password",
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        {
+          "properties": {
+            "authenticator": {
+              "enum": ["EXTERNALBROWSER"]
+            }
+          }
+        }
+      ]
     }
   },
   "required": [

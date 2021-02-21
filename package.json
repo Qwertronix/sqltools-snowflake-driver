@@ -45,7 +45,7 @@
     "@sqltools/base-driver": "latest",
     "@sqltools/types": "latest",
     "uuid": "^7.0.2",
-    "snowflake-sdk": "^1.5.3",
+    "snowflake-sdk": "git@github.com:snowflakedb/snowflake-connector-nodejs.git#e319bf4",
     "snowflake-promise": "^4.2.0"
   },
   "devDependencies": {

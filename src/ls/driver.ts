@@ -18,6 +18,7 @@ export default class SnowflakeDriver extends AbstractDriver<DriverLib, DriverOpt
       account: this.credentials.account,
       database: this.credentials.database,
       warehouse: this.credentials.warehouse,
+      authenticator: this.credentials.authenticator,
       username: this.credentials.username,
       password: this.credentials.password,
     };
